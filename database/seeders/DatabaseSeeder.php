@@ -19,19 +19,19 @@ class DatabaseSeeder extends Seeder
 	{
 		$movie1 = Movie::factory()->create([
 			'title' => 'The Pursuit Of Happyness',
-			'image' => './images/the-pursuit-of-happyness',
+			'image' => 'the-pursuit-of-happyness.jpg',
 		]);
 		$movie2 = Movie::factory()->create([
 			'title' => 'Spiderman',
-			'image' => './images/spiderman',
+			'image' => 'spiderman.jpg',
 		]);
 		$movie3 = Movie::factory()->create([
 			'title' => 'Batman',
-			'image' => './images/batman',
+			'image' => 'batman.jpg',
 		]);
 		$movie4 = Movie::factory()->create([
 			'title' => 'Shawshank',
-			'image' => './images/shawshank',
+			'image' => 'shawshank.jpg',
 		]);
 
 		Quote::factory()->create([
