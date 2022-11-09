@@ -11,7 +11,7 @@ class Movie extends Model
 
 	protected $guarded = [];
 
-	public function movies()
+	public function quotes()
 	{
 		return $this->hasMany(Quote::class);
 	}

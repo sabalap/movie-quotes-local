@@ -14,6 +14,12 @@
 
     </head>
     <body class="bg-zinc-700">
-       {{$slot}}
+        <div>
+            {{$slot}}
+            <language-panel>
+                    <span>en</span>
+                    <span>ka</span>
+            </language-panel>
+    </div>
     </body>
 </html>
