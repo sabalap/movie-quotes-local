@@ -4,6 +4,8 @@
             <img class="h-96 w-full mb-8" src="{{asset('/images/'.$quote->image)}}" alt="">
             <h1 class="text-white mb-10 text-2xl">"{{$quote->quote}}"</h1>
         @endforeach
+        <a href="movies/{{$movies->title}}">
             <h1 class="text-white text-5xl decoration-solid decoration-white underline">{{$movies->title}}</h1>
+        </a>
     </div>
 </x-layout>
