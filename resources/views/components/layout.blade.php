@@ -14,12 +14,14 @@
 
     </head>
     <body class="bg-zinc-700">
-        <div>
-            {{$slot}}
+        <div class="flex">
             <language-panel>
-                    <span>en</span>
-                    <span>ka</span>
+                <div class="mt-80 ml-7 flex flex-col">
+                    <span class="mb-4 w-14 h-14 flex items-center justify-center text-white rounded-full border-white border">en</span>
+                    <span class="w-14 h-14 flex bg-white items-center text-zinc-700 justify-center rounded-full border-white border">ka</span>
+                </div>
             </language-panel>
-    </div>
+            {{$slot}}
+        </div>
     </body>
 </html>

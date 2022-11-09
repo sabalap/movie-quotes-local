@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="text-center mx-auto w-5/12 mt-20">
+    <div class="text-center mx-auto w-5/12 mt-20 inline-block">
         @foreach ($quotes as $quote)
             <img class="h-96 w-full mb-8" src="{{asset('/images/'.$quote->image)}}" alt="">
             <h1 class="text-white mb-10 text-2xl">"{{$quote->quote}}"</h1>
