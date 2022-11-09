@@ -18,7 +18,6 @@ class MovieFactory extends Factory
 	{
 		return [
 			'title' => $this->faker->name(),
-			'image' => '',
 		];
 	}
 }
