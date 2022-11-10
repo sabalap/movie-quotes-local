@@ -13,8 +13,23 @@
         <!-- Styles -->
 
     </head>
-    <body class="bg-zinc-700">
-        <div class="flex">
+    <body class="bg-zinc-700 min-h-screen">
+        @auth
+        <div class="mt-5 text-white justify-end mr-14 text-3xl flex">
+            <h2 class="mr-8">Welcome!</h2>
+            <form method="POST" action="/logout">
+                @csrf
+                <button type="submit" class="bg-pink-200 text-black">Logout</button>
+            </form>
+        </div>
+        @else
+        <div class="mt-5 text-white text-right mr-14 text-3xl">
+            <a href="/login">
+                Login
+            </a>
+        </div>
+        @endauth
+        <div class="flex mb-3">
             <language-panel>
                 <div class="mt-80 ml-7 flex flex-col fixed">
                     <span class="mb-4 w-14 h-14 flex items-center justify-center text-white rounded-full border-white border">en</span>

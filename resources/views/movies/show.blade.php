@@ -1,5 +1,5 @@
 <x-layout>
-    <button class="w-10 h-10 bg-white mt-5 rounded">
+    <button class="ml-5 w-10 h-10 bg-white mt-5 rounded">
         <a href="/">Back</a>
     </button>
     <div class="text-center mx-auto w-5/12 mt-20 inline-block">
