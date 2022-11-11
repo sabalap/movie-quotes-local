@@ -16,6 +16,9 @@
     <body class="bg-zinc-700 min-h-screen">
         @auth
         <div class="mt-5 text-white justify-end mr-14 text-3xl flex">
+                <h2 class="mr-auto ml-10">
+                    <a href="/admin/movies">Dashboard</a>
+                    </h2>
             <h2 class="mr-8">Welcome!</h2>
             <form method="POST" action="/logout">
                 @csrf

@@ -14,8 +14,11 @@
           <div>
             <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
             <div class="mt-1">
-              <input id="email" name="email" type="email" autocomplete="email" class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+              <input id="email" value="{{old('email')}}" name="email" type="email" autocomplete="email" class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
             </div>
+            @error("email")
+                <p class="text-red-500">{{$message}}</p>
+            @enderror
           </div>
   
           <div>
@@ -23,6 +26,9 @@
             <div class="mt-1">
               <input id="password" name="password" type="password" autocomplete="current-password" class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
             </div>
+            @error("password")
+                <p class="text-red-500">{{$message}}</p>
+            @enderror
           </div>
   
           <div>

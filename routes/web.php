@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,9 @@ Route::get('login', [LoginController::class, 'create']);
 Route::post('login', [LoginController::class, 'store']);
 
 Route::post('logout', [LoginController::class, 'destroy']);
+
+Route::get('admin/movies', [AdminController::class, 'index']);
+
+// Route::get('movies', [AdminController::class, 'show']);
+
+// Route::delete('movies/{id}', [AdminController::class, 'destroy']);

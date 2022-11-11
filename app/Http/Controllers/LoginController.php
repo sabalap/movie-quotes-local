@@ -14,7 +14,6 @@ class LoginController extends Controller
 
 	public function store(LoginRequest $request)
 	{
-		// dd($request->email);
 		$admin = [
 			'email'    => $request->email,
 			'password' => $request->password,
