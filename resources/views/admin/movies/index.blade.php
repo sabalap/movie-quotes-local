@@ -1,12 +1,12 @@
 <x-layout>
     <div class="ml-24 mt-10">
         <h1 class="text-xl-5 font-bold mb-4 text-white">
-            <a href="movies">
+            <a href="movies" class={{request()->is('admin/movies') ? "bg-blue-500 text-white" : ""}}>
                 All Movies
             </a>
         </h1>
         <h1 class="text-xl-5 font-bold mb-3 text-white">
-            <a href="/new-movie">
+            <a href="new-movie" class={{request()->is('admin/new-movie') ? "bg-blue-500 text-white" : ""}}>
                 New Movie
             </a>
         </h1>
@@ -43,7 +43,7 @@
                               >
                             </td>
                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                              <form method="POST" action="movies/{{$movie->id}}">
+                              <form method="POST" action="admin/movies/{{$movie->id}}">
                                 @csrf
                                 @method("DELETE")
                                 <button class="text-indigo-600 hover:text-indigo-900"

@@ -18,18 +18,4 @@ class AdminController extends Controller
 			'quotes'  => $quotes,
 		]);
 	}
-
-	// public function show()
-	// {
-	// 	return view('admin.movies.show', [
-	// 		'movies'  => $movies,
-	// 		'quotes'  => $quotes,
-	// 	]);
-	// }
-
-	// public function destroy(Movie $movie)
-	// {
-	// 	$movie->delete();
-	// 	return redirect('movies');
-	// }
 }
