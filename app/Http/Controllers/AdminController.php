@@ -79,4 +79,10 @@ class AdminController extends Controller
 		]);
 		return redirect('/admin/movies');
 	}
+
+	public function destroy(Movie $movie)
+	{
+		$movie->delete();
+		return redirect('/admin/movies');
+	}
 }

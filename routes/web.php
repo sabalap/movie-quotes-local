@@ -37,3 +37,4 @@ Route::get('admin/quotes/{movie}/edit', [AdminController::class, 'quoteEdit']);
 
 Route::patch('admin/movies/{movie}', [AdminController::class, 'movieUpdate']);
 Route::patch('admin/quotes/{movie}', [AdminController::class, 'quoteUpdate']);
+Route::delete('admin/movies/{movie}', [AdminController::class, 'destroy']);
