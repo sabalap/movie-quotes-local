@@ -6,10 +6,15 @@
             </a>
         </h1>
         <h1 class="text-xl-5 font-bold mb-3 text-white">
-            <a href="new-movie" class={{request()->is('admin/new-movie') ? "bg-blue-500 text-white" : ""}}>
+            <a href="movies/create" class={{request()->is('admin/new-movie') ? "bg-blue-500 text-white" : ""}}>
                 New Movie
             </a>
         </h1>
+        <h1 class="text-xl-5 font-bold mb-3 text-white">
+          <a href="quotes/create" class={{request()->is('admin/new-quote') ? "bg-blue-500 text-white" : ""}}>
+              New Quote
+          </a>
+      </h1>
     </div>
     <div class="ml-56 mt-10">
         @foreach ($movies as $movie)
@@ -25,7 +30,7 @@
                               <div class="flex items-center">
                                 @foreach ($movie->quotes as $quote)
                                   <div class="h-12 w-12 flex-shrink-0">
-                                          <img class="h-12 w-12 rounded-full" src="{{asset('/images/'.$quote->image)}}" alt="" />
+                                          <img class="h-12 w-12 rounded-full" src="{{asset('/storage/' . $quote->image)}}" alt="" />
                                   </div>
                                 @endforeach 
                               </div>
@@ -38,12 +43,17 @@
                             </div>
                             </td>
                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                              <a href="#" class="text-indigo-600 hover:text-indigo-900"
-                                >Edit</a
-                              >
+                                <a href="/admin/movies/{{$movie->id}}/edit" class="text-indigo-600 hover:text-indigo-900"
+                                  >Movie Edit</button
+                                >
                             </td>
                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                              <form method="POST" action="admin/movies/{{$movie->id}}">
+                              <a href="/admin/quotes/{{$movie->id}}/edit" class="text-indigo-600 hover:text-indigo-900"
+                                >Quote Edit</button
+                              >
+                          </td>
+                            <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                              <form method="POST" action="/admin/movies/{{$movie->id}}">
                                 @csrf
                                 @method("DELETE")
                                 <button class="text-indigo-600 hover:text-indigo-900"

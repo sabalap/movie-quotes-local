@@ -10,7 +10,14 @@ class MovieController extends Controller
 	public function index()
 	{
 		$movie = Movie::inRandomOrder()->first();
-		$randomQuote = $movie->quotes->random(1);
+		if ($movie->quotes->count() > 0)
+		{
+			$randomQuote = $movie->quotes->random(1);
+		}
+		else
+		{
+			$randomQuote = [];
+		}
 		return view('movies.index', [
 			'movies'  => $movie,
 			'quotes'  => $randomQuote,

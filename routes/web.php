@@ -25,3 +25,9 @@ Route::post('login', [LoginController::class, 'store']);
 Route::post('logout', [LoginController::class, 'destroy']);
 
 Route::get('admin/movies', [AdminController::class, 'index']);
+
+Route::post('admin/movies', [AdminController::class, 'movieStore']);
+Route::post('admin/quotes', [AdminController::class, 'quoteStore']);
+
+Route::get('admin/movies/create', [AdminController::class, 'movieCreate']);
+Route::get('admin/quotes/create', [AdminController::class, 'quoteCreate']);
