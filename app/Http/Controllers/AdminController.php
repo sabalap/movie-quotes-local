@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use App\Models\Quote;
-use Illuminate\Validation\Rule;
 
 class AdminController extends Controller
 {
@@ -49,13 +48,35 @@ class AdminController extends Controller
 		return redirect('/admin/movies');
 	}
 
-	protected function validateMovie(?Movie $movie = null): array
+	public function movieEdit(Movie $movie)
 	{
-		$movie ??= new Movie();
+		return view('admin.movies.edit', ['movie' => $movie]);
+	}
 
-		return request()->validate([
-			'title' => 'required',
-			'id'    => ['required', Rule::unique('movies', 'id')->ignore($movie)],
+	public function quoteEdit(Quote $quote)
+	{
+		$movie_id = request()->segments()[2];
+		$quotes = Quote::all();
+		return view('admin.quotes.edit', [
+			'quotes'   => $quotes,
+			'movie_id' => $movie_id,
 		]);
+	}
+
+	public function movieUpdate(Movie $movie)
+	{
+		$movie->update(
+			[
+				'title' => request()->title, ]
+		);
+		return redirect('/admin/movies');
+	}
+
+	public function quoteUpdate(Movie $movie)
+	{
+		$movie->quotes()->update([
+			'quote' => request()->Quote,
+		]);
+		return redirect('/admin/movies');
 	}
 }
