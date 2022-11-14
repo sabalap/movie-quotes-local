@@ -48,6 +48,18 @@ class AdminController extends Controller
 		return redirect('/admin/movies');
 	}
 
+	public function quoteShow(Quote $quote)
+	{
+		$movie_id = request()->segments()[2];
+		$movie = Movie::all()->where('id', $movie_id);
+		$quotes = Quote::all();
+		return view('admin.quotes.show', [
+			'movie'    => $movie,
+			'quotes'   => $quotes,
+			'movie_id' => $movie_id,
+		]);
+	}
+
 	public function movieEdit(Movie $movie)
 	{
 		return view('admin.movies.edit', ['movie' => $movie]);
@@ -55,11 +67,8 @@ class AdminController extends Controller
 
 	public function quoteEdit(Quote $quote)
 	{
-		$movie_id = request()->segments()[2];
-		$quotes = Quote::all();
 		return view('admin.quotes.edit', [
-			'quotes'   => $quotes,
-			'movie_id' => $movie_id,
+			'quote' => $quote,
 		]);
 	}
 
@@ -72,17 +81,24 @@ class AdminController extends Controller
 		return redirect('/admin/movies');
 	}
 
-	public function quoteUpdate(Movie $movie)
+	public function quoteUpdate(Quote $quote)
 	{
-		$movie->quotes()->update([
+		$quote->update([
 			'quote' => request()->Quote,
+			'image' => request()->file('Image')->store('images'),
 		]);
 		return redirect('/admin/movies');
 	}
 
-	public function destroy(Movie $movie)
+	public function movieDestroy(Movie $movie)
 	{
 		$movie->delete();
+		return redirect('/admin/movies');
+	}
+
+	public function quoteDestroy(Quote $quote)
+	{
+		$quote->delete();
 		return redirect('/admin/movies');
 	}
 }

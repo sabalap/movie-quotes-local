@@ -32,9 +32,13 @@ Route::post('admin/quotes', [AdminController::class, 'quoteStore']);
 Route::get('admin/movies/create', [AdminController::class, 'movieCreate']);
 Route::get('admin/quotes/create', [AdminController::class, 'quoteCreate']);
 
+Route::get('admin/quotes/{movie}', [AdminController::class, 'quoteShow']);
+
 Route::get('admin/movies/{movie}/edit', [AdminController::class, 'movieEdit']);
-Route::get('admin/quotes/{movie}/edit', [AdminController::class, 'quoteEdit']);
+Route::get('admin/quotes/edit/{quote}', [AdminController::class, 'quoteEdit']);
 
 Route::patch('admin/movies/{movie}', [AdminController::class, 'movieUpdate']);
-Route::patch('admin/quotes/{movie}', [AdminController::class, 'quoteUpdate']);
-Route::delete('admin/movies/{movie}', [AdminController::class, 'destroy']);
+Route::patch('admin/quotes/{quote}', [AdminController::class, 'quoteUpdate']);
+
+Route::delete('admin/movies/{movie}', [AdminController::class, 'movieDestroy']);
+Route::delete('admin/quotes/{quote}', [AdminController::class, 'quoteDestroy']);
