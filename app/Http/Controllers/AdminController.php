@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddMovieRequest;
+use App\Http\Requests\AddQuoteRequest;
+use App\Http\Requests\EditMovieRequest;
+use App\Http\Requests\EditQuoteRequest;
 use App\Models\Movie;
 use App\Models\Quote;
 
@@ -30,20 +34,20 @@ class AdminController extends Controller
 		return view('admin.quotes.create');
 	}
 
-	public function movieStore()
+	public function movieStore(AddMovieRequest $request)
 	{
 		Movie::create([
-			'title' => request()->title,
+			'title' => $request->title,
 		]);
 		return redirect('/admin/movies');
 	}
 
-	public function quoteStore()
+	public function quoteStore(AddQuoteRequest $request)
 	{
 		Quote::create([
-			'quote'   => request()->quote,
+			'quote'   => $request->quote,
 			'movie_id'=> request()->movie_id,
-			'image'   => request()->file('image')->store('images'),
+			'image'   => $request->file('image')->store('images'),
 		]);
 		return redirect('/admin/movies');
 	}
@@ -72,20 +76,20 @@ class AdminController extends Controller
 		]);
 	}
 
-	public function movieUpdate(Movie $movie)
+	public function movieUpdate(Movie $movie, EditMovieRequest $request)
 	{
 		$movie->update(
 			[
-				'title' => request()->title, ]
+				'title' => $request->title, ]
 		);
 		return redirect('/admin/movies');
 	}
 
-	public function quoteUpdate(Quote $quote)
+	public function quoteUpdate(Quote $quote, EditQuoteRequest $request)
 	{
 		$quote->update([
-			'quote' => request()->Quote,
-			'image' => request()->file('Image')->store('images'),
+			'quote' => $request->quote,
+			'image' => $request->file('image')->store('images'),
 		]);
 		return redirect('/admin/movies');
 	}

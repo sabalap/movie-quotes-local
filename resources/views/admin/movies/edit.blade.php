@@ -7,6 +7,9 @@
                 <div class="flex flex-col items-center mb-5">
                     <x-label name="title" />
                     <x-input name="title" :value="old('title',$movie->title)"/>
+                    @error("title")
+                        <p class="text-red-500">{{$message}}</p>
+                    @enderror
                 </div>
                 <div class="w-full flex justify-center">
                     <button class="p-2.5 w-28 rounded mt-4 bg-white">Update</button>

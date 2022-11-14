@@ -21,10 +21,16 @@
         <div class="flex flex-col w-full mb-5">
         <x-label name="quote" />
         <x-input name="quote" />
+        @error("quote")
+        <p class="text-red-500">{{$message}}</p>
+        @enderror
         </div>
         <div class="flex flex-col w-full mb-5">
             <x-label name="image" />
             <x-input name="image" type="file" required />
+            @error("image")
+                <p class="text-red-500">{{$message}}</p>
+            @enderror
             </div>
         <select class="block mt-10" name="movie_id" id="movie_id">
         @foreach (\App\Models\Movie::all() as $movie)

@@ -21,6 +21,9 @@
         <div class="flex flex-col w-full">
         <x-label name="title" />
         <x-input name="title" />
+        @error("title")
+                <p class="text-red-500">{{$message}}</p>
+        @enderror
         </div>
         <button class="mt-10 p-3 bg-white w-1/2">Publish</button>
     </form>
