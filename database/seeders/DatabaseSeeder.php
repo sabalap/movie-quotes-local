@@ -32,50 +32,50 @@ class DatabaseSeeder extends Seeder
 
 		Quote::factory()->create([
 			'movie_id' => $movie1->id,
-			'quote'    => '',
-			'image'    => '',
+			'quote'    => "It's okay to fail; it's not okay to quit",
+			'image'    => '/images/the-pursuit-of-happyness1.jpg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie1->id,
-			'quote'    => '',
-			'image'    => '',
+			'quote'    => "Don't just talk that talk, walk it and go forward.",
+			'image'    => '/images/the-pursuit-of-happyness2.jpg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie2->id,
-			'quote'    => '',
-			'image'    => '',
+			'quote'    => "I've just got to do this on my own.",
+			'image'    => '/images/spiderman1.jpg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie2->id,
-			'quote'    => '',
-			'image'    => '',
+			'quote'    => 'Mary Jane Watson: Who are you?',
+			'image'    => '/images/spiderman2.jpeg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie3->id,
-			'quote'    => '',
-			'image'    => '',
+			'quote'    => 'Your anger gives you great power.',
+			'image'    => '/images/batman1.jpeg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie3->id,
-			'quote'    => '',
-			'image'    => '',
+			'quote'    => 'The night is darkest just before the dawn.',
+			'image'    => '/images/batman2.jpg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie4->id,
-			'quote'    => '',
-			'image'    => '',
+			'quote'    => "There's not a day goes by I don't feel regret.",
+			'image'    => '/images/shawshank1.jpeg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie4->id,
-			'quote'    => '',
-			'image'    => '',
+			'quote'    => 'The world went and got itself in a big damn hurry.',
+			'image'    => '/images/shawshank2.jpg',
 		]);
 	}
 }

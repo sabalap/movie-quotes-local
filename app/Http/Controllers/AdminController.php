@@ -14,24 +14,9 @@ class AdminController extends Controller
 	public function index()
 	{
 		$movies = Movie::all();
-		foreach ($movies as $movie)
-		{
-			$quotes = $movie->quotes;
-		}
 		return view('admin.movies.index', [
 			'movies'  => $movies,
-			'quotes'  => $quotes,
 		]);
-	}
-
-	public function movieCreate()
-	{
-		return view('admin.movies.create');
-	}
-
-	public function quoteCreate()
-	{
-		return view('admin.quotes.create');
 	}
 
 	public function movieStore(AddMovieRequest $request)
@@ -39,7 +24,7 @@ class AdminController extends Controller
 		Movie::create([
 			'title' => $request->title,
 		]);
-		return redirect('/admin/movies');
+		return redirect()->route('dashboard');
 	}
 
 	public function quoteStore(AddQuoteRequest $request)
@@ -49,7 +34,15 @@ class AdminController extends Controller
 			'movie_id'=> request()->movie_id,
 			'image'   => $request->file('image')->store('images'),
 		]);
-		return redirect('/admin/movies');
+		return redirect()->route('dashboard');
+	}
+
+	public function quoteCreate()
+	{
+		$movies = Movie::all();
+		return view('admin.quotes.create', [
+			'movies' => $movies,
+		]);
 	}
 
 	public function quoteShow(Quote $quote)
@@ -82,7 +75,7 @@ class AdminController extends Controller
 			[
 				'title' => $request->title, ]
 		);
-		return redirect('/admin/movies');
+		return redirect()->route('dashboard');
 	}
 
 	public function quoteUpdate(Quote $quote, EditQuoteRequest $request)
@@ -91,18 +84,18 @@ class AdminController extends Controller
 			'quote' => $request->quote,
 			'image' => $request->file('image')->store('images'),
 		]);
-		return redirect('/admin/movies');
+		return redirect()->route('dashboard');
 	}
 
 	public function movieDestroy(Movie $movie)
 	{
 		$movie->delete();
-		return redirect('/admin/movies');
+		return redirect()->route('dashboard');
 	}
 
 	public function quoteDestroy(Quote $quote)
 	{
 		$quote->delete();
-		return redirect('/admin/movies');
+		return redirect()->route('dashboard');
 	}
 }

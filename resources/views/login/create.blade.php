@@ -1,6 +1,6 @@
 <x-layout>
     <button class="ml-5 w-10 h-10 bg-white mt-5 rounded">
-        <a href="/">Back</a>
+        <a href={{route("home")}}>Back</a>
     </button>
     <div class="flex-col mx-auto">
         <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -9,7 +9,7 @@
             </div>
             <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form action="/login" class="space-y-6" method="POST">
+            <form action={{route("loginStore")}} class="space-y-6" method="POST">
             @csrf
           <div>
             <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>

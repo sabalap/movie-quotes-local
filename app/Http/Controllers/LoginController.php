@@ -7,11 +7,6 @@ use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-	public function create()
-	{
-		return view('login.create');
-	}
-
 	public function store(LoginRequest $request)
 	{
 		$admin = [
@@ -25,12 +20,12 @@ class LoginController extends Controller
 			]);
 		}
 		session()->regenerate();
-		return redirect('/')->with('success', 'Log In!');
+		return redirect()->route('home');
 	}
 
 	public function destroy()
 	{
 		auth()->logout();
-		return redirect('/');
+		return redirect()->route('home');
 	}
 }

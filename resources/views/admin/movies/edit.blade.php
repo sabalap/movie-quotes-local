@@ -1,7 +1,7 @@
 <x-layout>
     <div class="w-full flex-col items-center mt-10">
         <h1 class="text-center w-full text-white font-bold text-3xl mb-6">Movie Edit</h1>
-            <form action="/admin/movies/{{$movie->id}}" method="POST" enctype="multipart/form-data">
+            <form action={{route("movieUpdate",["movie" => $movie->id])}} method="POST" enctype="multipart/form-data">
                 @csrf
                 @method("PATCH")
                 <div class="flex flex-col items-center mb-5">

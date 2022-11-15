@@ -1,17 +1,17 @@
 <x-layout>
     <div class="ml-24 mt-10">
         <h1 class="text-xl-5 font-bold mb-4 text-white">
-            <a href="movies" class={{request()->is('admin/movies') ? "bg-blue-500 text-white" : ""}}>
+            <a href={{route('dashboard')}} class={{request()->is(('admin/movies')) ? "bg-blue-500 text-white" : ""}}>
                 All Movies
             </a>
         </h1>
         <h1 class="text-xl-5 font-bold mb-3 text-white">
-            <a href="movies/create" class={{request()->is('admin/new-movie') ? "bg-blue-500 text-white" : ""}}>
+            <a href={{route("movieCreate")}} class={{request()->is('admin/movies/create') ? "bg-blue-500 text-white" : ""}}>
                 New Movie
             </a>
         </h1>
         <h1 class="text-xl-5 font-bold mb-3 text-white">
-          <a href="quotes/create" class={{request()->is('admin/new-quote') ? "bg-blue-500 text-white" : ""}}>
+          <a href={{route("quoteCreate")}} class={{request()->is('admin/quotes/create') ? "bg-blue-500 text-white" : ""}}>
               New Quote
           </a>
       </h1>
@@ -37,23 +37,23 @@
                             </td>
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                               <div class="text-gray-900">
-                                <a href="/movies/{{$movie->title}}">
+                                <a href={{route("movie",$movie->title)}}>
                                     {{$movie->title}}
                                 </a>
                             </div>
                             </td>
                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                <a href="/admin/movies/{{$movie->id}}/edit" class="text-indigo-600 hover:text-indigo-900"
+                                <a href={{route('movieEdit',$movie->id)}} class="text-indigo-600 hover:text-indigo-900"
                                   >Movie Edit</button
                                 >
                             </td>
                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                              <a href="/admin/quotes/{{$movie->id}}" class="text-indigo-600 hover:text-indigo-900"
+                              <a href={{route("quotesShow",$movie->id)}} class="text-indigo-600 hover:text-indigo-900"
                                 >Quotes Edit</button
                               >
                           </td>
                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                              <form method="POST" action="/admin/movies/{{$movie->id}}">
+                              <form method="POST" action={{route("deleteMovie",$movie->id)}}>
                                 @csrf
                                 @method("DELETE")
                                 <button class="text-indigo-600 hover:text-indigo-900"

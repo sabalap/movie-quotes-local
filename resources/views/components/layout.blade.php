@@ -17,18 +17,18 @@
         @auth
         <div class="mt-5 text-white justify-end mr-14 text-3xl flex">
                 <h2 class="mr-auto ml-10">
-                    <a class="mr-10" href="/">Home</a>
-                    <a href="/admin/movies">Dashboard</a>
+                    <a class="mr-10" href={{route("home")}}>Home</a>
+                    <a href={{route("dashboard")}}>Dashboard</a>
                     </h2>
             <h2 class="mr-8">Welcome!</h2>
-            <form method="POST" action="/logout">
+            <form method="POST" action={{route("logout")}}>
                 @csrf
                 <button type="submit" class="bg-pink-200 text-black">Logout</button>
             </form>
         </div>
         @else
         <div class="mt-5 text-white text-right mr-14 text-3xl">
-            <a href="/login">
+            <a href={{route("loginCreate")}}>
                 Login
             </a>
         </div>

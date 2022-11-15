@@ -17,28 +17,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MovieController::class, 'index'])->name('home');
-Route::get('movies/{movie:title}', [MovieController::class, 'show']);
+Route::get('movies/{movie:title}', [MovieController::class, 'show'])->name('movie');
 
-Route::get('login', [LoginController::class, 'create']);
-Route::post('login', [LoginController::class, 'store']);
+Route::view('login', 'login.create')->name('loginCreate');
 
-Route::post('logout', [LoginController::class, 'destroy']);
+Route::post('login', [LoginController::class, 'store'])->name('loginStore');
 
-Route::get('admin/movies', [AdminController::class, 'index']);
+Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
 
-Route::post('admin/movies', [AdminController::class, 'movieStore']);
-Route::post('admin/quotes', [AdminController::class, 'quoteStore']);
+Route::get('admin/movies', [AdminController::class, 'index'])->name('dashboard');
 
-Route::get('admin/movies/create', [AdminController::class, 'movieCreate']);
-Route::get('admin/quotes/create', [AdminController::class, 'quoteCreate']);
+Route::post('admin/movies', [AdminController::class, 'movieStore'])->name('movieStore');
+Route::post('admin/quotes', [AdminController::class, 'quoteStore'])->name('quoteStore');
 
-Route::get('admin/quotes/{movie}', [AdminController::class, 'quoteShow']);
+Route::view('admin/movies/create', 'admin.movies.create')->name('movieCreate');
+Route::get('admin/quotes/create', [AdminController::class, 'quoteCreate'])->name('quoteCreate');
 
-Route::get('admin/movies/{movie}/edit', [AdminController::class, 'movieEdit']);
-Route::get('admin/quotes/edit/{quote}', [AdminController::class, 'quoteEdit']);
+Route::get('admin/quotes/{movie}', [AdminController::class, 'quoteShow'])->name('quotesShow');
 
-Route::patch('admin/movies/{movie}', [AdminController::class, 'movieUpdate']);
-Route::patch('admin/quotes/{quote}', [AdminController::class, 'quoteUpdate']);
+Route::get('admin/movies/{movie}/edit', [AdminController::class, 'movieEdit'])->name('movieEdit');
+Route::get('admin/quotes/edit/{quote}', [AdminController::class, 'quoteEdit'])->name('quoteEdit');
 
-Route::delete('admin/movies/{movie}', [AdminController::class, 'movieDestroy']);
-Route::delete('admin/quotes/{quote}', [AdminController::class, 'quoteDestroy']);
+Route::patch('admin/movies/{movie}', [AdminController::class, 'movieUpdate'])->name('movieUpdate');
+Route::patch('admin/quotes/{quote}', [AdminController::class, 'quoteUpdate'])->name('quoteUpdate');
+
+Route::delete('admin/movies/{movie}', [AdminController::class, 'movieDestroy'])->name('deleteMovie');
+Route::delete('admin/quotes/{quote}', [AdminController::class, 'quoteDestroy'])->name('deleteQuote');

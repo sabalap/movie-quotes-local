@@ -35,12 +35,12 @@
                           </div>
                           </td>
                           <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                            <a href="/admin/quotes/edit/{{$quote->id}}" class="text-indigo-600 hover:text-indigo-900"
+                            <a href={{route("quoteEdit",$quote->id)}} class="text-indigo-600 hover:text-indigo-900"
                               >Quote Edit</button
                             >
                         </td>
                           <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                            <form method="POST" action="/admin/quotes/{{$quote->id}}">
+                            <form method="POST" action={{route("deleteQuote",$quote->id)}}>
                               @csrf
                               @method("DELETE")
                               <button class="text-indigo-600 hover:text-indigo-900"
