@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
@@ -45,3 +46,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 	Route::delete('movies/{movie}', [AdminController::class, 'movieDestroy'])->name('deleteMovie');
 	Route::delete('quotes/{quote}', [AdminController::class, 'quoteDestroy'])->name('deleteQuote');
 });
+
+Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');

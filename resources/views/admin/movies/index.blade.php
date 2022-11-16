@@ -1,21 +1,21 @@
 <x-layout>
-    <div class="ml-24 mt-10">
-        <h1 class="text-xl-5 font-bold mb-4 text-white">
-            <a href={{route('dashboard')}} class={{request()->is(('admin/movies')) ? "bg-blue-500 text-white" : ""}}>
-                All Movies
-            </a>
-        </h1>
-        <h1 class="text-xl-5 font-bold mb-3 text-white">
-            <a href={{route("movieCreate")}} class={{request()->is('admin/movies/create') ? "bg-blue-500 text-white" : ""}}>
-                New Movie
-            </a>
-        </h1>
-        <h1 class="text-xl-5 font-bold mb-3 text-white">
-          <a href={{route("quoteCreate")}} class={{request()->is('admin/quotes/create') ? "bg-blue-500 text-white" : ""}}>
-              New Quote
-          </a>
-      </h1>
-    </div>
+  <div class="ml-24 mt-10">
+    <h1 class="text-xl-5 font-bold mb-4 text-white">
+        <a href={{route('dashboard')}} class={{request()->is(('admin/movies')) ? "bg-blue-500 text-white" : ""}}>
+            {{__("language.all movies")}}
+        </a>
+    </h1>
+    <h1 class="text-xl-5 font-bold mb-3 text-white">
+        <a href={{route("movieCreate")}} class={{request()->is('admin/movies/create') ? "bg-blue-500 text-white" : ""}}>
+            {{__("language.new movie")}}
+        </a>
+    </h1>
+    <h1 class="text-xl-5 font-bold mb-3 text-white">
+      <a href={{route("quoteCreate")}} class={{request()->is('admin/quotes/create') ? "bg-blue-500 text-white" : ""}}>
+          {{__("language.new quote")}}
+      </a>
+  </h1>
+</div>
     <div class="ml-56 mt-10">
         @foreach ($movies as $movie)
             <div class="px-4 sm:px-6 lg:px-8">
@@ -44,12 +44,12 @@
                             </td>
                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                 <a href={{route('movieEdit',$movie->id)}} class="text-indigo-600 hover:text-indigo-900"
-                                  >Movie Edit</button
+                                  >{{__("language.movie edit")}}</button
                                 >
                             </td>
                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                               <a href={{route("quotesShow",$movie->id)}} class="text-indigo-600 hover:text-indigo-900"
-                                >Quotes Edit</button
+                                >{{__("language.quotes edit")}}</button
                               >
                           </td>
                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
@@ -57,7 +57,7 @@
                                 @csrf
                                 @method("DELETE")
                                 <button class="text-indigo-600 hover:text-indigo-900"
-                                  >Delete
+                                  >{{__("language.delete")}}
                                   </button>
                               </form>
                               </td>

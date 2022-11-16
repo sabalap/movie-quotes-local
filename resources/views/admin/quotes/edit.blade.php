@@ -1,12 +1,12 @@
 <x-layout>
     <div class="w-full flex-col items-center mt-10">
-        <h1 class="text-center w-full text-white font-bold text-3xl mb-6">Quote Edit</h1>
+        <h1 class="text-center w-full text-white font-bold text-3xl mb-6">{{__("language.quote edit")}}</h1>
             <form action={{route("quoteUpdate",$quote->id)}} method="POST" enctype="multipart/form-data">
                 @csrf
                 @method("PATCH")
                     <div class="flex flex-col items-center mb-5">
-                        <x-label name="quote" />
-                        <x-input name="quote" :value="old('quote',$quote->quote)"/>
+                        <x-label name="{{__('language.quote')}}" />
+                        <x-input name="{{__('language.quote')}}" :value="old('quote',$quote->quote)"/>
                         @error("quote")
                             <p class="text-red-500">{{$message}}</p>
                         @enderror
@@ -21,7 +21,7 @@
                         @enderror
                     </div>
                 <div class="w-full flex justify-center">
-                    <button class="p-2.5 w-28 rounded mt-4 bg-white">Update</button>
+                    <button class="p-2.5 w-28 rounded mt-4 bg-white">{{__("language.update")}}</button>
                 </div>
             </form>
     </div>

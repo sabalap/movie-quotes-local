@@ -1,0 +1,28 @@
+<?php
+
+return [
+	'home'         => 'Home',
+	'dashboard'    => 'Dashboard',
+	'welcome'      => 'Welcome',
+	'logout'       => 'Logout',
+	'login'        => 'Login',
+	'en'           => 'en',
+	'ka'           => 'ka',
+	'back'         => 'Back',
+	'log in'       => 'Log In',
+	'all movies'   => 'All Movies',
+	'new movie'    => 'New Movie',
+	'new quote'    => 'New Quote',
+	'movie edit'   => 'Movie Edit',
+	'quotes edit'  => 'Quotes Edit',
+	'delete'       => 'Delete',
+	'title'        => 'Title',
+	'publish'      => 'Publish',
+	'email adress' => 'Email Address',
+	'password'     => 'Password',
+	'sign in'      => 'Sign In',
+	'update'       => 'Update',
+	'quote edit'   => 'Quote Edit',
+	'quote'        => 'Quote',
+	'image'        => 'Image',
+];
