@@ -21,9 +21,9 @@ Route::get('movies/{movie:title}', [MovieController::class, 'show'])->name('movi
 
 Route::view('login', 'login.create')->name('loginCreate');
 
-Route::post('login', [LoginController::class, 'store'])->name('loginStore');
+Route::post('login', [LoginController::class, 'login'])->name('loginStore');
 
-Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('admin/movies', [AdminController::class, 'index'])->name('dashboard');
 

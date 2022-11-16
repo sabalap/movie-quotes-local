@@ -7,7 +7,7 @@ use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-	public function store(LoginRequest $request)
+	public function login(LoginRequest $request)
 	{
 		$admin = [
 			'email'    => $request->email,
@@ -23,7 +23,7 @@ class LoginController extends Controller
 		return redirect()->route('home');
 	}
 
-	public function destroy()
+	public function logout()
 	{
 		auth()->logout();
 		return redirect()->route('home');
