@@ -26,35 +26,37 @@ Spatie Translatable - package fro translation
 </ul>
 
 <h2>Getting Started</h2>
-1. First of all you need to clone movie-quotes from github:
-git clone https://github.com/RedberryInternship/sabalap-movie-quotes.git
-2. Next step requires you to run composer install in order to install all the dependencies.
-composer install
-3. after you have installed all the PHP dependencies, it's time to install all the JS dependencies:
-npm install 
-and also:
-npm run dev
-4. Now we need to set our env file. Go to the root of your project and execute this command.
-cp .env.example .env
+<h3>1. First of all you need to clone movie-quotes from github:</h3>
+<p>git clone https://github.com/RedberryInternship/sabalap-movie-quotes.git</p>
+<h3>2. Next step requires you to run composer install in order to install all the dependencies.</h3>
+<p>composer install</p>
+<h3>3. after you have installed all the PHP dependencies, it's time to install all the JS dependencies:</h3>
+<p>npm install </p>
+<p>and also:</p>
+<p>npm run dev</p>
+<h3>4. Now we need to set our env file. Go to the root of your project and execute this command.</h3>
+<p>cp .env.example .env</p>
 
-And now you should provide .env file all the necessary environment variables
+<h3>And now you should provide .env file all the necessary environment variables</h3>
 
-after setting up .env file, execute:
-php artisan config:cache
+<h3>after setting up .env file, execute:</h3>
+<p>php artisan config:cache</p>
 
-5.  Now execute in the root of you project following:
- php artisan key:generate
- Which generates auth key.
+<h3>5. Now execute in the root of you project following:</h3>
+ <p>php artisan key:generate</p>
+ <p>Which generates auth key.</p>
 
- Migration
- if you've completed getting started section, then migrating database if fairly simple process, just execute:
- php artisan migrate
+ <h3>Migration</h3>
+ <h3>if you've completed getting started section, then migrating database if fairly simple process, just execute:</h3>
+ <p>php artisan migrate</p>
 
- Development
-You can run Laravel's built-in development server by executing:
-php artisan serve
-when working on JS you may run:
-npm run dev
+ <h1>Development</h1>
+<h3>You can run Laravel's built-in development server by executing:</h3>
+<p>php artisan serve</p>
+<h3>when working on JS you may run:</h3>
+<p>npm run dev</p>
 
-drawSql Database diagram
-Link: https://drawsql.app/teams/redberry-24/diagrams/movie-quotes
+<h3>drawSql Database diagram</h3>
+<a href="https://drawsql.app/teams/redberry-24/diagrams/movie-quotes">
+drasql Diagram
+</a>
