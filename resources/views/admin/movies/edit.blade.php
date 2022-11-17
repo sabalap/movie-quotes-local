@@ -5,8 +5,8 @@
                 @csrf
                 @method("PATCH")
                 <div class="flex flex-col items-center mb-5">
-                    <x-label name="{{__('language.title')}}" />
-                    <x-input name="{{__('language.title')}}" :value="old('title',$movie->title)"/>
+                    <x-label name="title" />
+                    <x-input name="title" :value="old('title',$movie->title)"/>
                     @error("title")
                         <p class="text-red-500">{{$message}}</p>
                     @enderror

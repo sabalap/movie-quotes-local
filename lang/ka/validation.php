@@ -116,7 +116,7 @@ return [
 	'prohibited_unless'    => 'The :attribute field is prohibited unless :other is in :values.',
 	'prohibits'            => 'The :attribute field prohibits :other from being present.',
 	'regex'                => 'The :attribute format is invalid.',
-	'required'             => 'The :attribute field is required.',
+	'required'             => ':attribute',
 	'required_array_keys'  => 'The :attribute field must contain entries for: :values.',
 	'required_if'          => 'The :attribute field is required when :other is :value.',
 	'required_if_accepted' => 'The :attribute field is required when :other is accepted.',
@@ -167,4 +167,11 @@ return [
 	| of "email". This simply helps us make our message more expressive.
 	|
 	*/
+
+	'attributes' => [
+		'title_ka' => 'სათაური არის სავალდებულო',
+		'title_en' => 'სათაური არის სავალდებულო',
+		'quote_ka' => 'ციტატა არის სავალდებულო',
+		'quote_en' => 'ციტატა არის სავალდებულო',
+	],
 ];

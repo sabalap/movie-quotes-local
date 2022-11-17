@@ -19,15 +19,22 @@
     <form class="ml-48 w-2/3 mt-24 mx-auto" action={{route("quoteStore")}} method="POST" enctype="multipart/form-data">
         @csrf
         <div class="flex flex-col w-full mb-5">
-        <x-label name="{{__('language.quote')}}" />
-        <x-input name="{{__('language.quote')}}" />
-        @error("quote")
+        <x-label name="quote_en" />
+        <x-input name="quote_en" />
+        @error("quote_en")
         <p class="text-red-500">{{$message}}</p>
         @enderror
         </div>
         <div class="flex flex-col w-full mb-5">
-            <x-label name="{{__('language.image')}}" />
-            <x-input name="{{__('language.image')}}" type="file" required />
+            <x-label name="quote_ka" />
+            <x-input name="quote_ka" />
+            @error("quote_ka")
+            <p class="text-red-500">{{$message}}</p>
+            @enderror
+            </div>
+        <div class="flex flex-col w-full mb-5">
+            <x-label name="image" />
+            <x-input name="image" type="file" required />
             @error("image")
                 <p class="text-red-500">{{$message}}</p>
             @enderror

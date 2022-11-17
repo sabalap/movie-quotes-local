@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MovieController::class, 'index'])->name('home');
-Route::get('movies/{movie:title}', [MovieController::class, 'show'])->name('movie');
+Route::get('movies/{movie:id}', [MovieController::class, 'show'])->name('movie');
 
 Route::view('login', 'login.create')->middleware('guest')->name('loginCreate');
 

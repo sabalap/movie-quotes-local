@@ -37,7 +37,7 @@
                             </td>
                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                               <div class="text-gray-900">
-                                <a href={{route("movie",$movie->title)}}>
+                                <a href={{route("movie",$movie->id)}}>
                                     {{$movie->title}}
                                 </a>
                             </div>

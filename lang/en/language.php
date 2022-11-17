@@ -25,4 +25,11 @@ return [
 	'quote edit'   => 'Quote Edit',
 	'quote'        => 'Quote',
 	'image'        => 'Image',
+	'en'           => 'en',
+	'ka'           => 'ka',
+	'title_en'     => 'Title en',
+	'title_ka'     => 'Title ka',
+	'title'        => 'Title',
+	'quote_en'     => 'Quote en',
+	'quote_ka'     => 'Quote ka',
 ];

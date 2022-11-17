@@ -22,7 +22,10 @@ class AdminController extends Controller
 	public function movieStore(AddMovieRequest $request)
 	{
 		Movie::create([
-			'title' => $request->title,
+			'title' => [
+				'ka'	=> $request->title_ka,
+				'en' => $request->title_en,
+			],
 		]);
 		return redirect()->route('dashboard');
 	}
@@ -30,7 +33,10 @@ class AdminController extends Controller
 	public function quoteStore(AddQuoteRequest $request)
 	{
 		Quote::create([
-			'quote'   => $request->quote,
+			'quote'   => [
+				'en' => $request->quote_en,
+				'ka' => $request->quote_ka,
+			],
 			'movie_id'=> request()->movie_id,
 			'image'   => $request->file('image')->store('images'),
 		]);

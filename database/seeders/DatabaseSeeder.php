@@ -18,63 +18,99 @@ class DatabaseSeeder extends Seeder
 	public function run()
 	{
 		$movie1 = Movie::factory()->create([
-			'title' => 'The Pursuit Of Happyness',
+			'title' => [
+				'en' => 'The Pursuit of Happyness',
+				'ka' => 'ბედნიერების დევნაში',
+			],
 		]);
 		$movie2 = Movie::factory()->create([
-			'title' => 'Spiderman',
+			'title' => [
+				'en' => 'Spiderman',
+				'ka' => 'სპაიდერმენი',
+			],
 		]);
 		$movie3 = Movie::factory()->create([
-			'title' => 'Batman',
+			'title' => [
+				'en' => 'Batman',
+				'ka' => 'ბეტმენი',
+			],
 		]);
 		$movie4 = Movie::factory()->create([
-			'title' => 'Shawshank',
+			'title' => [
+				'en' => 'Shawshank',
+				'ka' => 'შოუშენკი',
+			],
+		]);
+
+		Quote::factory()->create([
+			'movie_id'    => $movie1->id,
+			'quote'       => [
+				'en' => "It's okay to fail; it's not okay to quit",
+				'ka' => 'კარგია წარუმატებლობა, არ არის კარგი დანებდე',
+			],
+			'image'       => '/images/the-pursuit-of-happyness1.jpg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie1->id,
-			'quote'    => "It's okay to fail; it's not okay to quit",
-			'image'    => '/images/the-pursuit-of-happyness1.jpg',
-		]);
-
-		Quote::factory()->create([
-			'movie_id' => $movie1->id,
-			'quote'    => "Don't just talk that talk, walk it and go forward.",
+			'quote'    => [
+				'en' => "Don't just talk that talk, walk it and go forward.",
+				'ka' => 'მხოლოდ ასე არ  ილაპარაკო, იარე და წინ წადი',
+			],
 			'image'    => '/images/the-pursuit-of-happyness2.jpg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie2->id,
-			'quote'    => "I've just got to do this on my own.",
+			'quote'    => [
+				'en' => "I've just got to do this on my own.",
+				'ka' => 'მე უბრალოდ უნდა გავაკეთო ჩემით',
+			],
 			'image'    => '/images/spiderman1.jpg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie2->id,
-			'quote'    => 'Mary Jane Watson: Who are you?',
+			'quote'    => [
+				'en' => 'Mary Jane Watson: Who are you?',
+				'ka' => 'მერი ჯეინ ვოტსონ: ვინ ხარ?',
+			],
 			'image'    => '/images/spiderman2.jpeg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie3->id,
-			'quote'    => 'Your anger gives you great power.',
+			'quote'    => [
+				'en' => 'Your anger gives you great power.',
+				'ka' => 'შენი ბრაზი დიდ ძალას გაძლევს',
+			],
 			'image'    => '/images/batman1.jpeg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie3->id,
-			'quote'    => 'The night is darkest just before the dawn.',
+			'quote'    => [
+				'en' => 'The night is darkest just before the dawn.',
+				'ka' => 'ღამე ყველაზე ბნელია გათენებამდე.',
+			],
 			'image'    => '/images/batman2.jpg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie4->id,
-			'quote'    => "There's not a day goes by I don't feel regret.",
+			'quote'    => [
+				'en' => "There's not a day goes by I don't feel regret.",
+				'ka' => 'არ გავა დღე, არ ვიგრძნო სინანული',
+			],
 			'image'    => '/images/shawshank1.jpeg',
 		]);
 
 		Quote::factory()->create([
 			'movie_id' => $movie4->id,
-			'quote'    => 'The world went and got itself in a big damn hurry.',
+			'quote'    => [
+				'en' => 'The world went and got itself in a big damn hurry.',
+				'ka' => 'სამყარო დიდ აურზაურშია',
+			],
 			'image'    => '/images/shawshank2.jpg',
 		]);
 	}

@@ -18,10 +18,17 @@
     </div>
     <form class="ml-48 w-2/3 mt-24 mx-auto" action={{route("dashboard")}} method="POST" enctype="multipart/form-data">
         @csrf
+        <div class="flex flex-col w-full mb-3">
+        <x-label name="title_en"/>
+        <x-input name="title_en"/>
+        @error("title_en")
+                <p class="text-red-500">{{$message}}</p>
+        @enderror
+        </div>
         <div class="flex flex-col w-full">
-        <x-label name="{{__('language.title')}}" />
-        <x-input name="{{__('language.title')}}" />
-        @error("title")
+            <x-label name="title_ka" />
+            <x-input name="title_ka" />
+        @error("title_ka")
                 <p class="text-red-500">{{$message}}</p>
         @enderror
         </div>

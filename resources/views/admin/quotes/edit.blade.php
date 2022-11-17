@@ -5,8 +5,8 @@
                 @csrf
                 @method("PATCH")
                     <div class="flex flex-col items-center mb-5">
-                        <x-label name="{{__('language.quote')}}" />
-                        <x-input name="{{__('language.quote')}}" :value="old('quote',$quote->quote)"/>
+                        <x-label name="quote" />
+                        <x-input name="quote" :value="old('quote',$quote->quote)"/>
                         @error("quote")
                             <p class="text-red-500">{{$message}}</p>
                         @enderror
