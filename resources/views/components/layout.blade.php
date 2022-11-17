@@ -17,27 +17,30 @@
         @auth
         <div class="mt-5 text-white justify-end mr-14 text-3xl flex">
                 <h2 class="mr-auto ml-10">
-                    <a class="mr-10" href={{route("home")}}>Home</a>
-                    <a href={{route("dashboard")}}>Dashboard</a>
+                    <a class="mr-10" href={{route("home")}}>{{__("language.home")}}</a>
+                    <a href={{route("dashboard")}}>{{__("language.dashboard")}}</a>
                     </h2>
-            <h2 class="mr-8">Welcome!</h2>
+            <h2 class="mr-8">{{__("language.welcome")}}!</h2>
             <form method="POST" action={{route("logout")}}>
                 @csrf
-                <button type="submit" class="bg-pink-200 text-black">Logout</button>
+                <button type="submit" class="bg-pink-200 text-black">{{__("language.logout")}}</button>
             </form>
         </div>
         @else
         <div class="mt-5 text-white text-right mr-14 text-3xl">
             <a href={{route("loginCreate")}}>
-                Login
+                {{__("language.login")}}
             </a>
         </div>
         @endauth
         <div class="flex mb-3">
             <language-panel>
                 <div class="mt-80 ml-7 flex flex-col fixed">
-                    <span class="mb-4 w-14 h-14 flex items-center justify-center text-white rounded-full border-white border">en</span>
-                    <span class="w-14 h-14 flex bg-white items-center text-zinc-700 justify-center rounded-full border-white border">ka</span>
+                    @foreach (Config::get("languages") as $lang => $language)
+                    <a href="{{route('lang.switch', $lang)}}" class="{{$lang !== App::getLocale() ? 'mb-4 w-14 h-14 flex bg-white items-center text-zink-700 justify-center rounded-full border-white border' : 'mb-4 w-14 h-14 flex items-center text-zink-700 justify-center rounded-full border-white border'}}">
+                        {{$language}}
+                    </a>
+                    @endforeach
                 </div>
             </language-panel>
             {{$slot}}

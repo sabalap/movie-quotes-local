@@ -10,15 +10,8 @@ class AddMovieRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'title'    => ['required', Rule::unique('movies', 'title')],
-		];
-	}
-
-	public function messages()
-	{
-		return [
-			'title.required'    => 'Title is required',
-			'title.unique'      => 'Title already exists',
+			'title_en'            => ['required', Rule::unique('movies', 'title')],
+			'title_ka'            => ['required'],
 		];
 	}
 }

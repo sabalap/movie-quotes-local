@@ -1,6 +1,6 @@
 <x-layout>
     <div class="mx-auto mt-10">
-    <h1 class="text-2xl text-white font-bold mb-5 text-center">Quote Edit</h1>
+    <h1 class="text-2xl text-white font-bold mb-5 text-center">{{__("language.quote edit")}}</h1>
     @foreach ($movie as $mv)
         <h2 class="text-2xl text-pink-600 text-center">
             {{$mv->title}}
@@ -36,7 +36,7 @@
                           </td>
                           <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                             <a href={{route("quoteEdit",$quote->id)}} class="text-indigo-600 hover:text-indigo-900"
-                              >Quote Edit</button
+                              >{{__("language.quote edit")}}</button
                             >
                         </td>
                           <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
@@ -44,7 +44,7 @@
                               @csrf
                               @method("DELETE")
                               <button class="text-indigo-600 hover:text-indigo-900"
-                                >Delete
+                                >{{__("language.delete")}}
                                 </button>
                             </form>
                             </td>
