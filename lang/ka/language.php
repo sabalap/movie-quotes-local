@@ -25,9 +25,9 @@ return [
 	'quote edit'   => 'ციტატის შეცვლა',
 	'quote'        => 'ციტატა',
 	'image'        => 'სურათი',
-	'title_en'     => 'სათაური en',
-	'title_ka'     => 'სათაური ka',
-	'quote_en'     => 'ციტატა en',
-	'quote_ka'     => 'ციტატა ka',
+	'title_en'     => 'სათაური ინგ',
+	'title_ka'     => 'სათაური ქარ',
+	'quote_en'     => 'ციტატა ინგ',
+	'quote_ka'     => 'ციტატა ქარ',
 	'title'        => 'სათაური',
 ];
