@@ -16,7 +16,7 @@ class LoginController extends Controller
 		if (!auth()->attempt($admin))
 		{
 			throw ValidationException::withMessages([
-				'email' => 'Your provided credentials could not be verified',
+				'email' => __('language.email_is_not_correct'),
 			]);
 		}
 		session()->regenerate();
