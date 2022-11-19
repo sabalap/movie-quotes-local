@@ -37,7 +37,7 @@
             <language-panel>
                 <div class="mt-80 ml-7 flex flex-col fixed">
                     @foreach (Config::get("languages") as $lang => $language)
-                    <a href="{{route('lang.switch', $lang)}}" class="{{$lang !== App::getLocale() ? 'mb-4 w-14 h-14 flex bg-white items-center text-zink-700 justify-center rounded-full border-white border' : 'mb-4 w-14 h-14 flex items-center text-zink-700 justify-center rounded-full border-white border'}}">
+                    <a href="{{route('lang.switch', $lang)}}" class="{{$lang !== App::getLocale() ? 'mb-4 w-14 h-14 flex items-center text-zink-700 justify-center rounded-full border-white border' : 'mb-4 w-14 h-14 flex items-center bg-white text-zink-700 justify-center rounded-full border-white border'}}">
                         {{$language}}
                     </a>
                     @endforeach
