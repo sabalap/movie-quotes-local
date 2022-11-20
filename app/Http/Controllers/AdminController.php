@@ -19,6 +19,14 @@ class AdminController extends Controller
 		]);
 	}
 
+	public function quotesShow()
+	{
+		$quotes = Quote::all();
+		return view('admin.quotes.index', [
+			'quotes'  => $quotes,
+		]);
+	}
+
 	public function movieStore(AddMovieRequest $request)
 	{
 		Movie::create([

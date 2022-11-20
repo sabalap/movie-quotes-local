@@ -11,6 +11,7 @@ return [
 	'back'                 => 'უკან',
 	'log in'               => 'შესვლა',
 	'all movies'           => 'ყველა ფილმი',
+	'all quotes'           => 'ყველა ციტატა',
 	'new movie'            => 'დაამატე ფილმი',
 	'new quote'            => 'დაამატე ციტატა',
 	'movie edit'           => 'ფილმის შეცვლა',
