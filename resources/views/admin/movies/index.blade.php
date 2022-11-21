@@ -16,7 +16,7 @@
       </a>
   </h1>
 </div>
-    <div class="ml-56 mt-10">
+    <div class="ml-56 mt-10 w-full">
         @foreach ($movies as $movie)
             <div class="px-4 sm:px-6 lg:px-8">
               <div class="mt-8 flex flex-col">

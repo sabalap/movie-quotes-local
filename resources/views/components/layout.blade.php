@@ -26,12 +26,6 @@
                 <button type="submit" class="bg-pink-200 text-black">{{__("language.logout")}}</button>
             </form>
         </div>
-        @else
-        <div class="mt-5 text-white text-right mr-14 text-3xl">
-            <a href={{route("loginCreate")}}>
-                {{__("language.login")}}
-            </a>
-        </div>
         @endauth
         <div class="flex mb-3">
             <language-panel>
