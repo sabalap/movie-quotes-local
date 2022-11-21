@@ -11,6 +11,7 @@ return [
 	'back'                 => 'Back',
 	'log in'               => 'Log In',
 	'all movies'           => 'All Movies',
+	'all quotes'           => 'All Quotes',
 	'new movie'            => 'New Movie',
 	'new quote'            => 'New Quote',
 	'movie edit'           => 'Movie Edit',

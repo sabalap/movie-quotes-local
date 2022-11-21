@@ -28,6 +28,7 @@ Route::post('logout', [LoginController::class, 'logout'])->middleware('auth')->n
 
 Route::prefix('admin')->middleware('auth')->group(function () {
 	Route::get('movies', [AdminController::class, 'index'])->name('dashboard');
+	Route::get('quotes', [AdminController::class, 'quotesShow'])->name('allQuotes');
 
 	Route::post('movies', [AdminController::class, 'movieStore'])->name('movieStore');
 	Route::post('quotes', [AdminController::class, 'quoteStore'])->name('quoteStore');

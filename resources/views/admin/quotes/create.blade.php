@@ -5,6 +5,11 @@
                 {{__("language.all movies")}}
             </a>
         </h1>
+        <h1 class="text-xl-5 font-bold mb-4 text-white">
+          <a href={{route('allQuotes')}} class={{request()->is(('admin/quotes')) ? "bg-blue-500 text-white" : ""}}>
+              {{__("language.all quotes")}}
+          </a>
+      </h1>
         <h1 class="text-xl-5 font-bold mb-3 text-white">
             <a href={{route("movieCreate")}} class={{request()->is('admin/movies/create') ? "bg-blue-500 text-white" : ""}}>
                 {{__("language.new movie")}}
