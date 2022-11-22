@@ -59,7 +59,7 @@ class AdminController extends Controller
 		]);
 	}
 
-	public function quoteShow(Quote $quote)
+	public function quoteShow()
 	{
 		$movie_id = request()->segments()[2];
 		$movie = Movie::all()->where('id', $movie_id);
