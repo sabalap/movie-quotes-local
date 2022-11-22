@@ -1,7 +1,7 @@
 <x-layout>
     <div class="text-center mx-auto w-5/12 mt-20 inline-block">
         @foreach ($quotes as $quote)
-            <img class="h-96 w-full mb-8" src="{{asset($quote->image)}}" alt="">
+            <img class="h-96 w-full mb-8" src="{{asset('/storage/' . $quote->image)}}" alt="">
             <h1 class="text-white mb-10 text-2xl">"{{$quote->quote}}"</h1>
         @endforeach
         <a href={{route("movie",$movies->id)}}>
