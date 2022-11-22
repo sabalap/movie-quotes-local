@@ -12,7 +12,7 @@
                         @enderror
                     </div>
                     <div class="flex justify-center mt-10 mb-8 h-20">
-                        <img src="{{asset('storage/' . $quote->image)}}" width="140px" alt="">
+                        <img src="{{asset($quote->image)}}" width="140px" alt="">
                     </div>
                     <div class="flex flex-col items-center mb-5">
                         <x-input name="image" type="file" :value="old('image',$quote->image)"/>

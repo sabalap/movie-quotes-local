@@ -35,7 +35,7 @@
                               <div class="flex items-center">
                                 @foreach ($movie->quotes as $quote)
                                   <div class="h-12 w-12 flex-shrink-0">
-                                          <img class="h-12 w-12 rounded-full" src="{{asset('/storage/' . $quote->image)}}" alt="" />
+                                          <img class="h-12 w-12 rounded-full" src="{{asset($quote->image)}}" alt="" />
                                   </div>
                                 @endforeach 
                               </div>
