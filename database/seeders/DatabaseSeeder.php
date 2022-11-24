@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Movie;
 use App\Models\Quote;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -41,6 +42,7 @@ class DatabaseSeeder extends Seeder
 				'ka' => 'შოუშენკი',
 			],
 		]);
+		$this->faker = Faker::create();
 
 		Quote::factory()->create([
 			'movie_id'    => $movie1->id,
@@ -48,7 +50,7 @@ class DatabaseSeeder extends Seeder
 				'en' => "It's okay to fail; it's not okay to quit",
 				'ka' => 'კარგია წარუმატებლობა, არ არის კარგი დანებდე',
 			],
-			'image'       => '/images/the-pursuit-of-happyness1.jpg',
+			'image'       => $this->faker->imageUrl(640, 480, 'movies', true),
 		]);
 
 		Quote::factory()->create([
@@ -57,7 +59,7 @@ class DatabaseSeeder extends Seeder
 				'en' => "Don't just talk that talk, walk it and go forward.",
 				'ka' => 'მხოლოდ ასე არ  ილაპარაკო, იარე და წინ წადი',
 			],
-			'image'    => '/images/the-pursuit-of-happyness2.jpg',
+			'image'       => $this->faker->imageUrl(640, 480, 'movies', true),
 		]);
 
 		Quote::factory()->create([
@@ -66,7 +68,7 @@ class DatabaseSeeder extends Seeder
 				'en' => "I've just got to do this on my own.",
 				'ka' => 'მე უბრალოდ უნდა გავაკეთო ჩემით',
 			],
-			'image'    => '/images/spiderman1.jpg',
+			'image'       => $this->faker->imageUrl(640, 480, 'movies', true),
 		]);
 
 		Quote::factory()->create([
@@ -75,7 +77,7 @@ class DatabaseSeeder extends Seeder
 				'en' => 'Mary Jane Watson: Who are you?',
 				'ka' => 'მერი ჯეინ ვოტსონ: ვინ ხარ?',
 			],
-			'image'    => '/images/spiderman2.jpeg',
+			'image'       => $this->faker->imageUrl(640, 480, 'movies', true),
 		]);
 
 		Quote::factory()->create([
@@ -84,7 +86,7 @@ class DatabaseSeeder extends Seeder
 				'en' => 'Your anger gives you great power.',
 				'ka' => 'შენი ბრაზი დიდ ძალას გაძლევს',
 			],
-			'image'    => '/images/batman1.jpeg',
+			'image'       => $this->faker->imageUrl(640, 480, 'movies', true),
 		]);
 
 		Quote::factory()->create([
@@ -93,7 +95,7 @@ class DatabaseSeeder extends Seeder
 				'en' => 'The night is darkest just before the dawn.',
 				'ka' => 'ღამე ყველაზე ბნელია გათენებამდე.',
 			],
-			'image'    => '/images/batman2.jpg',
+			'image'       => $this->faker->imageUrl(640, 480, 'movies', true),
 		]);
 
 		Quote::factory()->create([
@@ -102,7 +104,7 @@ class DatabaseSeeder extends Seeder
 				'en' => "There's not a day goes by I don't feel regret.",
 				'ka' => 'არ გავა დღე, არ ვიგრძნო სინანული',
 			],
-			'image'    => '/images/shawshank1.jpeg',
+			'image'       => $this->faker->imageUrl(640, 480, 'movies', true),
 		]);
 
 		Quote::factory()->create([
@@ -111,7 +113,7 @@ class DatabaseSeeder extends Seeder
 				'en' => 'The world went and got itself in a big damn hurry.',
 				'ka' => 'სამყარო დიდ აურზაურშია',
 			],
-			'image'    => '/images/shawshank2.jpg',
+			'image'       => $this->faker->imageUrl(640, 480, 'movies', true),
 		]);
 	}
 }

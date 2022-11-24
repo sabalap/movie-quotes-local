@@ -23,7 +23,11 @@
                           <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                             <div class="flex items-center">
                                   <div class="h-12 w-12 flex-shrink-0">
-                                          <img class="h-12 w-12 rounded-full" src="{{asset('/storage/' . $quote->image)}}" alt="" />
+                                    @if (Str::startsWith($quote->image,"images"))
+                                    <img class="h-full w-full mb-8" src="{{asset('/storage/' . $quote->image)}}" alt="">
+                                        @else 
+                                    <img class="h-full w-full mb-8" src="{{asset($quote->image)}}" alt="">
+                                        @endif
                                   </div>
                             </div>
                           </td>

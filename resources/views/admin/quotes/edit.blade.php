@@ -11,8 +11,12 @@
                             <p class="text-red-500">{{$message}}</p>
                         @enderror
                     </div>
-                    <div class="flex justify-center mt-10 mb-8 h-20">
-                        <img src="{{asset($quote->image)}}" width="140px" alt="">
+                    <div class="flex justify-center mt-10 mb-8 h-32">
+                        @if (Str::startsWith($quote->image,"images"))
+                        <img class="h-full w-96 mb-8" width="140px" src="{{asset('/storage/' . $quote->image)}}" alt="">
+                            @else 
+                        <img class="h-full w-96 mb-8" width="140px"  src="{{asset($quote->image)}}" alt="">
+                            @endif
                     </div>
                     <div class="flex flex-col items-center mb-5">
                         <x-input name="image" type="file" :value="old('image',$quote->image)"/>
