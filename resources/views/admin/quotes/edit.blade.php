@@ -13,7 +13,7 @@
                     </div>
                     <div class="flex justify-center mt-10 mb-8 h-32">
                         @if (Str::startsWith($quote->image,"images"))
-                        <img class="h-full w-96 mb-8" width="140px" src="{{asset('/storage/' . $quote->image)}}" alt="">
+                        <img class="h-full w-96 mb-8" width="140px" src="{{asset('storage/' . $quote->image)}}" alt="">
                             @else 
                         <img class="h-full w-96 mb-8" width="140px"  src="{{asset($quote->image)}}" alt="">
                             @endif
