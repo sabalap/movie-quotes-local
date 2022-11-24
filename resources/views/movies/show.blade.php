@@ -4,7 +4,7 @@
         @foreach ($quotes as $quote)
         <div class="mb-8 border border-black">
             @if (Str::startsWith($quote->image,"images"))
-            <img class="h-96 w-full mb-8" src="{{asset('/storage/' . $quote->image)}}" alt="">
+            <img class="h-96 w-full mb-8" src="{{asset('storage/' . $quote->image)}}" alt="">
                 @else 
             <img class="h-96 w-full mb-8" src="{{asset($quote->image)}}" alt="">
                 @endif

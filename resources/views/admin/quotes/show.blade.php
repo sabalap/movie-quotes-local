@@ -24,7 +24,7 @@
                             <div class="flex items-center">
                                   <div class="h-12 w-12 flex-shrink-0">
                                     @if (Str::startsWith($quote->image,"images"))
-                                    <img class="h-full w-full mb-8" src="{{asset('/storage/' . $quote->image)}}" alt="">
+                                    <img class="h-full w-full mb-8" src="{{asset('storage/' . $quote->image)}}" alt="">
                                         @else 
                                     <img class="h-full w-full mb-8" src="{{asset($quote->image)}}" alt="">
                                         @endif
