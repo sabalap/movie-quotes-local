@@ -15,10 +15,4 @@ class AddQuoteRequest extends FormRequest
 			'image'       => ['required', 'image', Rule::unique('quotes', 'image')],
 		];
 	}
-
-	public function messages()
-	{
-		return [
-		];
-	}
 }
