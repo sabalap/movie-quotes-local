@@ -12,7 +12,11 @@
   @vite('resources/css/app.css')
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('favicon.png')}}">
         <!-- Styles -->
-
+        <style>
+            .image{
+                width: 512px;
+            }
+        </style>
     </head>
     <body class="bg-zinc-700 min-h-screen">
         @auth

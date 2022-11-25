@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
 	public function index()
 	{
-		$movies = Movie::all();
+		$movies = Movie::all()->sortDesc();
 		return view('admin.movies.index', [
 			'movies'  => $movies,
 		]);
@@ -21,7 +21,7 @@ class AdminController extends Controller
 
 	public function quotesShow()
 	{
-		$quotes = Quote::all();
+		$quotes = Quote::all()->sortDesc();
 		return view('admin.quotes.index', [
 			'quotes'  => $quotes,
 		]);
@@ -94,10 +94,21 @@ class AdminController extends Controller
 
 	public function quoteUpdate(Quote $quote, EditQuoteRequest $request)
 	{
-		$quote->update([
-			'quote' => $request->quote,
-			'image' => $request->file('image')->store('images'),
-		]);
+		$attributes = $request->validated();
+		if (isset($attributes['image']))
+		{
+			$attributes['image'] = request()->file('image')->store('images');
+			$quote->update([
+				'quote' => $attributes['quote'],
+				'image' => $attributes['image'],
+			]);
+		}
+		else
+		{
+			$quote->update([
+				'quote' => $attributes['quote'],
+			]);
+		}
 		return redirect()->route('dashboard');
 	}
 

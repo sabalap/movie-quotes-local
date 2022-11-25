@@ -9,10 +9,15 @@ class EditQuoteRequest extends FormRequest
 {
 	public function rules()
 	{
-		return [
+		$rules = [
 			'quote'    => ['required', Rule::unique('quotes', 'quote'), 'min:5'],
-			'image'    => ['required', 'image', Rule::unique('quotes', 'image')],
+			'image'    => 'image',
 		];
+		if (request()->getMethod() == 'POST')
+		{
+			$rules['image'] = 'image|' . 'required';
+		}
+		return $rules;
 	}
 
 	public function messages()
