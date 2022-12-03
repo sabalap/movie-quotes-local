@@ -1,3 +1,12 @@
+.env 
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=movie_quotes
+DB_USERNAME=saba
+DB_PASSWORD=saba12345
+
+
 <img src="/image.png" alt="">
 <h1>
 Movie Quotes
